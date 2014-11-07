@@ -1,0 +1,18 @@
+<html>
+<head>
+</head>
+<body>
+<div>
+  Hello, World
+</div>
+<div id="ret">
+</div>
+<script>
+  var ret = document.getElementById("ret");
+  var fs = require("fs");
+  var data = fs.readFileSync('./memo.txt');
+  ret.innerHTML = data;
+</script>
+</body>
+</html>
+
