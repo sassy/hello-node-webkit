@@ -7,11 +7,25 @@
 </div>
 <div id="ret">
 </div>
+<button onclick="minimize()">minimize</button>
+<button onclick="open()">open</button>
 <script>
   var ret = document.getElementById("ret");
   var fs = require("fs");
   var data = fs.readFileSync('./memo.txt');
   ret.innerHTML = data;
+
+  var hello = require('./hello/build/Release/hello');  
+  ret.innerHTML = hello.hello();
+
+
+  function minimize() {
+      var gui = require('nw.gui');
+      var win = gui.Window.get();
+      win.minimize();
+  }
+
+
 </script>
 </body>
 </html>

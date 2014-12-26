@@ -9,3 +9,12 @@ NodeWebkitを試しに使ってみただけ。
 $ npm install
 $ npm start
 ```
+
+# hello モジュールビルド
+
+```
+$ npm install -g nw-gyp
+$ cd hello
+$ nw-gyp rebuild --target=0.11.2
+```
+
