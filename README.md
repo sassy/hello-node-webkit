@@ -12,6 +12,8 @@ $ npm start
 
 # hello モジュールビルド
 
+node-webkitのバージョンが0.11.2であるため、それにあわせてビルドする
+
 ```
 $ npm install -g nw-gyp
 $ cd hello

@@ -5,8 +5,19 @@
 <div>
   Hello, World
 </div>
+<br>
 <div id="ret">
 </div>
+<br>
+<div id="ret2">
+</div>
+<br>
+<div id="ret3">
+</div>
+<br>
+<div id="ret4">
+</div>
+<br>
 <button onclick="minimize()">minimize</button>
 <button onclick="open()">open</button>
 <script>
@@ -15,9 +26,19 @@
   var data = fs.readFileSync('./memo.txt');
   ret.innerHTML = data;
 
+  var ret2 = document.getElementById("ret2");
   var hello = require('./hello/build/Release/hello');  
-  ret.innerHTML = hello.hello();
+  ret2.innerHTML = hello.hello();
 
+  var ret3 = document.getElementById("ret3");
+  ret3.innerHTML = hello.add(1, 2);
+
+  var ret4 = document.getElementById("ret4");
+  hello.addWithCallback(function(num) {
+    ret4.innerHTML = num;
+  }, function(msg) {
+    ret4.innerHTML = msg;
+  }, 5, 4);
 
   function minimize() {
       var gui = require('nw.gui');
